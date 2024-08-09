@@ -1,0 +1,15 @@
+- name: adding firewall rule for http traffic.
+  firewalld:
+    service: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  loop: "{{ firewall_rule }}"
+
+- name: adding the port 80 on firewall.
+  firewalld:                 
+    port: 80/tcp
+    permanent: true          
+    immediate: true          
+    state: enabled   
+

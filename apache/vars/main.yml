@@ -1,0 +1,6 @@
+start_reload:
+  - httpd
+  - firewalld
+firewall_rule:
+  - http
+  - https

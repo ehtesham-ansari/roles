@@ -1,0 +1,5 @@
+- name: reloading the httpd,firewalld services.
+  service:
+    name: "{{ item }}"
+    state: restarted
+  loop: "{{ start_reload }}"
